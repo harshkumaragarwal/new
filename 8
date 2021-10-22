@@ -1,0 +1,131 @@
+8.1
+int *p = {10,20,20};
+
+cout << *p;
+
+p++;
+
+cout << *p;
+This will show an error since we have allocated the pointer and not assigned memory for it in heap.
+8.2
+v1
+int arr[] = {10,20,30};
+
+cout << *arr;
+
+cout << arr;
+
+arr++;
+
+cout << *arr;
+The issue with this code is that we are doing arr++. it is not valid in cpp.
+To solve it we need to declare a pointer and use it.
+8.3 Task: Output of this program?
+
+V1. Output?
+
+int a = 10;
+
+int *p;
+
+int **q;//used to store address of pointer.
+
+p = &a;
+
+q = &p;
+
+cout << *p;//10
+
+cout << **q;//10
+V2.
+*(*q)=89;
+8.4 Task: Find factorial of a number using function but not recurssion
+#include<iostream>
+using namespace std;
+void fact(int n)
+{
+    if(n==0|| n==1)
+    cout<<"1";
+    else{
+    int fac=1;
+    for(int i=n;i>1;i--)
+    fac*=i;
+    cout<<fac;}
+}
+int main()
+{
+int n;
+cin>>n;
+fact(n);
+}
+8.5 Task: Find factorial of a number using recurssion
+#include<iostream>
+using namespace std;
+int fact(int n)
+{
+    
+    if(n==0|| n==1)
+   return 1;
+    else{
+    return fact(n-1)*n;
+    }
+}
+int main()
+{
+int n;
+cin>>n;
+cout<<fact(n);
+}
+8.6 Task: Series Problem using recurssion for n series
+
+2, (2^2 + 2), (3^3 + 3), (4^4 + 4), (5^5 + 5), .......
+
+Hint:
+
+n * ((n-1)^(n-1) + (n-1))
+
+NOT ABLE TO UNDERSTAND QUESTION
+8.7 Task: Perform Call by value, call by Address for swapping value of a and b:
+
+int a = 10;
+
+int b = 20;
+
+V1. Swap(a,b); //call by Value [void swap(int a, int b){}]
+#include<iostream>
+using namespace std;
+void swap(int a,int b)
+{
+    int temp=a;
+    a=b;
+    b=temp;
+    cout<<"IN FUNCTION "<<a<<" "<<b<<endl;
+}
+int main()
+{
+int a,b;
+cin>>a>>b;
+swap(a,b);
+cout<<"OUTSIDE FUNCTION "<<a<<" "<<b<<endl;
+}
+
+V2. Swap(a,b); //call by Value [void swap(int &a, int &b){}]
+#include<iostream>
+using namespace std;
+void swap(int &a,int &b)
+{
+    int temp=a;
+    a=b;
+    b=temp;
+    cout<<"IN FUNCTION "<<a<<" "<<b<<endl;
+}
+int main()
+{
+int a,b;
+cin>>a>>b;
+swap(a,b);
+cout<<"OUTSIDE FUNCTION "<<a<<" "<<b<<endl;
+}
+
+V3. Swap(&a,&b); //call by Address
+IIt shows error.
