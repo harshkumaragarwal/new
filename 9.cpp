@@ -90,3 +90,12 @@ struct student
 3.classes are stored in heap whereas struct is stored in stack.
 4. Classes take less memory as compared to struct.
 3.classes are stored in heap whereas struct is stored in stack.
+9.6
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+ int n=10;
+ cout<<n<<endl;
+ cout<<setw(15)<<setfill('*')<<n;
+}
